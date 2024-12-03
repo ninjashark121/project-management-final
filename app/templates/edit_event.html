@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit Event</h2>
+
+<form method="post" action="/edit-event/{{ event_index }}">
+    <label for="event_date">Event Date:</label>
+    <input type="date" id="event_date" name="event_date" value="{{ event.date }}" required>
+    <label for="event_title">Event Title:</label>
+    <input type="text" id="event_title" name="event_title" value="{{ event.title }}" required>
+    <label for="event_description">Event Description:</label>
+    <textarea id="event_description" name="event_description" rows="3" required>{{ event.description }}</textarea>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="/working-calendar" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

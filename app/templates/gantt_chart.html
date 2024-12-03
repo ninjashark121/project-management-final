@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gantt Chart</title>
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Include CSS for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Button -->
+    <div class="navigation">
+        <a href="{{ url_for('index') }}" class="back-button">← Back to Website</a>
+    </div>
+
+    <h2>Gantt Chart for Community Park Renovation</h2>
+
+    <!-- Embed the Gantt chart -->
+    {{ gantt_chart | safe }}
+</body>
+</html>

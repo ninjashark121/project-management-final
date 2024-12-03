@@ -20,8 +20,11 @@
     <input type="date" id="event_date" name="event_date" required>
     <label for="event_title">Event Title:</label>
     <input type="text" id="event_title" name="event_title" required>
-    <button type="submit">Add Event</button>
+    <label for="event_description">Event Description:</label>
+    <textarea id="event_description" name="event_description" rows="2" required></textarea>
+    <button type="submit" class="btn btn-primary">Add Event</button>
 </form>
+
 
 <!-- Selected Date and Events -->
 {% if selected_date %}
@@ -40,11 +43,14 @@
 <ul>
     {% for event in events %}
         <li>
-            <strong>{{ event.date }}</strong>: {{ event.title }}
+            <strong>{{ event.date }}</strong>: <b>{{ event.title }}</b> - {{ event.description }}
             <form method="post" action="/delete-event/{{ loop.index0 }}" style="display: inline;">
                 <button type="submit" class="delete-button">Delete</button>
             </form>
+            <a href="/edit-event/{{ loop.index0 }}" class="edit-button">Edit</a>
         </li>
     {% endfor %}
 </ul>
+
+
 {% endblock %}
