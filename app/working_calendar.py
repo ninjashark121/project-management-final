@@ -3,35 +3,35 @@ import calendar
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Needed for form handling
+app.secret_key = 'your_secret_key'
 
 # In-memory storage for events
 events = []
 
 @app.route('/working-calendar', methods=['GET', 'POST'])
 def working_calendar():
-    global events
-
-    # Handle form submission to add a new event
     if request.method == 'POST':
-        event_date = request.form.get('event_date')
-        event_title = request.form.get('event_title')
-        if event_date and event_title:
-            events.append({'date': event_date, 'title': event_title})
-        return redirect(url_for('working_calendar'))  # Redirect to avoid resubmission issues
+        return "POST request received!"
+    return "GET request received!"
 
-    # Generate the calendar for the current month
+
+    # Generate calendar for the current month
     today = datetime.today()
-    cal = calendar.HTMLCalendar().formatmonth(today.year, today.month)
+    year, month = today.year, today.month
+    cal = calendar.HTMLCalendar().formatmonth(year, month)
 
     # Highlight days with events
     for event in events:
-        event_day = int(event['date'].split('-')[2])
-        cal = cal.replace(f'>{event_day}<', f' class="event-day">{event_day}<')
+        event_date = datetime.strptime(event['date'], "%Y-%m-%d")
+        if event_date.year == year and event_date.month == month:
+            event_day = event_date.day
+            cal = cal.replace(f'>{event_day}<', f' class="event-day">{event_day}<')
 
-    return render_template('working_calendar.html', calendar=cal, events=events)
+    # Sort events by date
+    sorted_events = sorted(events, key=lambda x: x['date'])
 
-
+    return render_template('working_calendar.html', calendar=cal, events=sorted_events)
 
 if __name__ == '__main__':
     app.run(debug=True)
+

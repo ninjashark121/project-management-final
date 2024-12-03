@@ -3,8 +3,19 @@
 {% block content %}
 <h2>Working Calendar</h2>
 
+<!-- Month Navigation -->
+<div class="calendar-navigation">
+    <a href="/working-calendar?year={{ prev_year }}&month={{ prev_month }}" class="nav-button">Previous Month</a>
+    <a href="/working-calendar?year={{ next_year }}&month={{ next_month }}" class="nav-button">Next Month</a>
+</div>
+
+<!-- Rendered Calendar -->
+<div class="calendar">
+    {{ calendar | safe }}
+</div>
+
 <!-- Form to Add Events -->
-<form method="post" action="/working-calendar">
+<form method="post" action="/working-calendar?year={{ year }}&month={{ month }}">
     <label for="event_date">Event Date:</label>
     <input type="date" id="event_date" name="event_date" required>
     <label for="event_title">Event Title:</label>
@@ -12,17 +23,28 @@
     <button type="submit">Add Event</button>
 </form>
 
+<!-- Selected Date and Events -->
+{% if selected_date %}
+    <h3>Events for {{ selected_date }}</h3>
+    <ul>
+        {% for event in events_for_date %}
+            <li><strong>{{ event.date }}</strong>: {{ event.title }}</li>
+        {% else %}
+            <li>No events planned for this day.</li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
-<!-- Rendered Calendar -->
-<div class="calendar">
-    {{ calendar|safe }}
-</div>
-
-<!-- List of Events -->
-<h3>Upcoming Events</h3>
+<!-- List of All Upcoming Events -->
+<h3>All Upcoming Events</h3>
 <ul>
     {% for event in events %}
-        <li>{{ event.date }}: {{ event.title }}</li>
+        <li>
+            <strong>{{ event.date }}</strong>: {{ event.title }}
+            <form method="post" action="/delete-event/{{ loop.index0 }}" style="display: inline;">
+                <button type="submit" class="delete-button">Delete</button>
+            </form>
+        </li>
     {% endfor %}
 </ul>
 {% endblock %}
