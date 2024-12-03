@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Working Calendar</h2>
+
+<!-- Form to Add Events -->
+<form method="post" action="/working-calendar">
+    <label for="event_date">Event Date:</label>
+    <input type="date" id="event_date" name="event_date" required>
+    <label for="event_title">Event Title:</label>
+    <input type="text" id="event_title" name="event_title" required>
+    <button type="submit">Add Event</button>
+</form>
+
+
+<!-- Rendered Calendar -->
+<div class="calendar">
+    {{ calendar|safe }}
+</div>
+
+<!-- List of Events -->
+<h3>Upcoming Events</h3>
+<ul>
+    {% for event in events %}
+        <li>{{ event.date }}: {{ event.title }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

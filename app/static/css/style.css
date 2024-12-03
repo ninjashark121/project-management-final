@@ -1,7 +1,10 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 header {
@@ -9,6 +12,10 @@ header {
     color: white;
     padding: 1em;
     text-align: center;
+}
+
+header h1 {
+    margin: 0;
 }
 
 nav a {
@@ -23,6 +30,11 @@ nav a:hover {
 
 main {
     padding: 2em;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 footer {
@@ -33,4 +45,135 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    margin-right: 10px;
+}
+
+form input[type="date"],
+form input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Calendar Styles */
+.calendar {
+    margin: 20px auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar table {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.calendar th,
+.calendar td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 5px;
+}
+
+.calendar .event-day {
+    background-color: #f0c674;
+    font-weight: bold;
+    color: #000;
+}
+
+.calendar th {
+    background-color: #333;
+    color: white;
+}
+
+/* List of Events */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+button.primary:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 1em;
+    }
+
+    form input[type="date"],
+    form input[type="text"] {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    form button {
+        width: 100%;
+    }
 }
