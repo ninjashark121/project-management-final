@@ -88,10 +88,66 @@ def sow():
     return render_template('sow.html')
 
 
+import pandas as pd
+import plotly.express as px
+from flask import Markup
+
 # Route: Gantt Chart
 @app.route('/gantt-chart')
 def gantt_chart():
-    return render_template('gantt.html')
+    # Task Data for Gantt Chart
+    data = [
+        {"Task": "Initiation", "Start": "2025-01-01", "Finish": "2025-01-14", "Resource": "Initiation"},
+        {"Task": "Assemble Project Team", "Start": "2025-01-01", "Finish": "2025-01-05", "Resource": "Initiation"},
+        {"Task": "Define Project Goals", "Start": "2025-01-06", "Finish": "2025-01-08", "Resource": "Initiation"},
+        {"Task": "Approve Budget", "Start": "2025-01-09", "Finish": "2025-01-10", "Resource": "Initiation"},
+        {"Task": "Assess Feasibility", "Start": "2025-01-11", "Finish": "2025-01-14", "Resource": "Initiation"},
+        {"Task": "Planning", "Start": "2025-01-15", "Finish": "2025-01-28", "Resource": "Planning"},
+        {"Task": "Stakeholder Meetings", "Start": "2025-01-15", "Finish": "2025-01-17", "Resource": "Planning"},
+        {"Task": "Task Plans", "Start": "2025-01-18", "Finish": "2025-01-22", "Resource": "Planning"},
+        {"Task": "Communication Protocols", "Start": "2025-01-23", "Finish": "2025-01-24", "Resource": "Planning"},
+        {"Task": "Finalize Designs", "Start": "2025-01-25", "Finish": "2025-01-28", "Resource": "Planning"},
+        {"Task": "Execution", "Start": "2025-02-01", "Finish": "2025-02-20", "Resource": "Execution"},
+        {"Task": "Clear Site", "Start": "2025-02-01", "Finish": "2025-02-07", "Resource": "Execution"},
+        {"Task": "Install Equipment", "Start": "2025-02-08", "Finish": "2025-02-12", "Resource": "Execution"},
+        {"Task": "Construct Trails", "Start": "2025-02-08", "Finish": "2025-02-17", "Resource": "Execution"},
+        {"Task": "Set Up Picnic Areas", "Start": "2025-02-18", "Finish": "2025-02-20", "Resource": "Execution"},
+        {"Task": "Control", "Start": "2025-02-01", "Finish": "2025-02-19", "Resource": "Control"},
+        {"Task": "Monitor Progress", "Start": "2025-02-01", "Finish": "2025-02-15", "Resource": "Control"},
+        {"Task": "Scope Changes", "Start": "2025-02-15", "Finish": "2025-02-19", "Resource": "Control"},
+        {"Task": "Closure", "Start": "2025-02-25", "Finish": "2025-03-01", "Resource": "Closure"},
+        {"Task": "Final Inspections", "Start": "2025-02-25", "Finish": "2025-02-27", "Resource": "Closure"},
+        {"Task": "Deliver Renovated Park", "Start": "2025-02-28", "Finish": "2025-03-01", "Resource": "Closure"}
+    ]
+
+    # Create DataFrame
+    df = pd.DataFrame(data)
+
+    # Create Gantt Chart
+    fig = px.timeline(
+        df,
+        x_start="Start",
+        x_end="Finish",
+        y="Task",
+        color="Resource",
+        title="Gantt Chart for Community Park Renovation",
+        labels={"Task": "Tasks", "Resource": "Phases"}
+    )
+
+    fig.update_layout(
+        xaxis_title="Timeline",
+        yaxis_title="Tasks",
+        xaxis=dict(showgrid=True),
+        yaxis=dict(autorange="reversed"),
+        bargap=0.2,
+        height=600
+    )
+
+    # Convert plot to HTML
+    gantt_chart_html = fig.to_html(full_html=False)
+
+    return render_template('gantt_chart.html', gantt_chart=Markup(gantt_chart_html))
+
 
 
 # Route: Working Calendar
