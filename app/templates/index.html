@@ -1,6 +1,194 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f9;
+            color: #333;
+        }
 
-{% block content %}
-<h2>Welcome to the Project Management Portfolio</h2>
-<p>This is the main page of the application.</p>
-{% endblock %}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, #4CAF50, #2196F3);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .hero a {
+            background: white;
+            color: #4CAF50;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+        }
+        .hero a:hover {
+            background: #4CAF50;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 20px;
+            text-align: center;
+            background: white;
+        }
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #4CAF50;
+        }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .feature-box {
+            background: linear-gradient(120deg, #f4f4f9, #ffffff);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .feature-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #2196F3;
+        }
+        .feature-box p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .feature-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .feature-box a:hover {
+            background: #4CAF50;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to Our Project Portfolio</h1>
+        <p>Join us as we create an innovative mobile app to revolutionize customer service.</p>
+        <a href="#features">Explore Features</a>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Project Features</h2>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h3>Project Charter</h3>
+                <p>Understand the project's objectives, scope, and stakeholders.</p>
+                <a href="{{ url_for('project_charter') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Work Breakdown Structure</h3>
+                <p>Explore the detailed structure of project tasks and phases.</p>
+                <a href="{{ url_for('wbs') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Gantt Chart</h3>
+                <p>Visualize the timeline and milestones with a Gantt chart.</p>
+                <a href="{{ url_for('gantt_chart') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Risk Management</h3>
+                <p>Discover how we identify and mitigate potential project risks.</p>
+                <a href="{{ url_for('risk_management') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Team Building</h3>
+                <p>Learn about activities designed to enhance team collaboration.</p>
+                <a href="{{ url_for('team_building') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Status Reports</h3>
+                <p>Track our progress with detailed status and progress reports.</p>
+                <a href="{{ url_for('status_reports') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Cost Estimates</h3>
+                <p>Explore a breakdown of project costs and budget planning.</p>
+                <a href="{{ url_for('cost_estimates') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Critical Path Analysis</h3>
+                <p>Understand the project's timeline and critical path to success.</p>
+                <a href="{{ url_for('critical_path') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Project Network Diagram</h3>
+                <p>Visualize the relationships and dependencies between tasks.</p>
+                <a href="{{ url_for('project_network') }}">Learn More</a>
+            </div>
+            <div class="feature-box">
+                <h3>Working Calendar</h3>
+                <p>Access and manage project schedules with ease.</p>
+                <a href="{{ url_for('working_calendar') }}">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2024 Mobile App Development Portfolio. Built with <a href="https://flask.palletsprojects.com/">Flask</a>.
+    </footer>
+</body>
+</html>
