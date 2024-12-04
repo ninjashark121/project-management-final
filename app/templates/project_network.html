@@ -6,17 +6,30 @@
 <!-- Introduction -->
 <section class="network-diagram-intro">
     <h3 class="section-title">Introduction</h3>
-    <p>The Project Network Diagram (Activity-on-Arrow) visually represents the sequence of activities, their dependencies, and the flow of the project. It specifies the length of each activity to aid in timeline planning and critical path analysis.</p>
+    <p>The Project Network Diagram (Activity-on-Arrow) visually represents the sequence of activities, their dependencies, and the flow of the project. It specifies the length of each activity to aid in timeline planning and critical path analysis. Click the diagram to view it in a larger format.</p>
 </section>
 
-<!-- AOA Network Diagram -->
+<!-- AOA Network Diagram with Click-to-Enlarge Feature -->
 <section class="network-diagram">
     <h3 class="section-title">AOA Network Diagram</h3>
     <p>The diagram below shows the activities and their dependencies for the "Mobile App Development for Customer Service" project:</p>
     <div class="diagram-container">
-        <img src="{{ url_for('static', filename='network_diagram.png') }}" alt="Project Network Diagram" class="responsive-image">
+        <!-- Thumbnail -->
+        <img 
+            src="{{ url_for('static', filename='network_diagram.png') }}" 
+            alt="Project Network Diagram" 
+            class="responsive-image" 
+            onclick="openModal()"
+            style="cursor: pointer;"
+        >
     </div>
 </section>
+
+<!-- Modal for Enlarged Image -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="enlargedImage">
+</div>
 
 <!-- Activity Table -->
 <section class="activity-table">
@@ -84,4 +97,58 @@
     <h3 class="section-title">Summary</h3>
     <p>The AOA Network Diagram ensures all activities and dependencies are accounted for, helping to identify the critical path and efficiently manage project timelines. This tool is integral for scheduling and resource allocation.</p>
 </section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM fully loaded and parsed");
+
+        // Open the Modal
+        function openModal() {
+            const modal = document.getElementById("imageModal");
+            const modalImage = document.getElementById("enlargedImage");
+
+            if (modal && modalImage) {
+                console.log("Opening modal...");
+                modal.style.display = "block";
+                modalImage.src = "{{ url_for('static', filename='network_diagram.png') }}";
+                console.log("Modal opened successfully with image:", modalImage.src);
+            } else {
+                console.error("Modal or modal image element not found.");
+            }
+        }
+
+        // Close the Modal
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+
+            if (modal) {
+                console.log("Closing modal...");
+                modal.style.display = "none";
+            } else {
+                console.error("Modal element not found.");
+            }
+        }
+
+        // Attach event listeners
+        const image = document.querySelector(".diagram-container img");
+        const closeButton = document.querySelector("#imageModal .close");
+
+        if (image) {
+            console.log("Image element found:", image);
+            image.addEventListener("click", openModal);
+        } else {
+            console.error("Image element not found.");
+        }
+
+        if (closeButton) {
+            console.log("Close button found:", closeButton);
+            closeButton.addEventListener("click", closeModal);
+        } else {
+            console.error("Close button not found.");
+        }
+    });
+</script>
 {% endblock %}

@@ -1,2 +1,4 @@
 Flask==2.3.2
-# Add other dependencies as needed
+pandas==2.1.0
+plotly==5.15.0
+Werkzeug==2.3.2
