@@ -670,3 +670,246 @@ section {
         font-size: 0.9rem;
     }
 }
+
+/* General Styling */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #2196F3;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.styled-list {
+    list-style: none;
+    padding: 0;
+}
+.styled-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.styled-list li:before {
+    content: "•";
+    color: #4CAF50;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* General Styling */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #2196F3;
+    margin-bottom: 20px;
+}
+
+/* Image Styling */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    text-align: left;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+.styled-table th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.styled-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.styled-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Section Padding */
+section {
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .styled-table {
+        font-size: 0.9rem;
+    }
+}
+
+/* General Styling */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #2196F3;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    text-align: left;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+.styled-table th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.styled-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.styled-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styled Lists */
+.styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+.styled-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.styled-list li:before {
+    content: "•";
+    color: #4CAF50;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Section Padding */
+section {
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .styled-table {
+        font-size: 0.9rem;
+    }
+}
+
+/* General Styling */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #2196F3;
+    margin-bottom: 20px;
+}
+
+/* Styled Lists */
+.styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+.styled-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+.styled-list li:before {
+    content: "•";
+    color: #4CAF50;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Section Padding */
+section {
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+}

@@ -1,79 +1,81 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Critical Path Analysis</h2>
+<h2 class="page-title">Critical Path Analysis</h2>
 
 <!-- Introduction -->
 <section class="critical-path-intro">
-    <h3>Introduction</h3>
+    <h3 class="section-title">Introduction</h3>
     <p>Critical Path Analysis (CPA) is used to identify the sequence of tasks that determine the shortest possible duration for project completion. Below is the analysis for the "Mobile App Development for Customer Service" project.</p>
 </section>
 
 <!-- Task List -->
 <section class="task-list">
-    <h3>All Paths Identified</h3>
+    <h3 class="section-title">All Paths Identified</h3>
     <p>The following tasks are included in the analysis, with their durations:</p>
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>Task</th>
-                <th>Description</th>
-                <th>Duration (Days)</th>
-                <th>Dependencies</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>A</td>
-                <td>Gather Requirements</td>
-                <td>10</td>
-                <td>None</td>
-            </tr>
-            <tr>
-                <td>B</td>
-                <td>Design App</td>
-                <td>15</td>
-                <td>A</td>
-            </tr>
-            <tr>
-                <td>C</td>
-                <td>Develop Frontend</td>
-                <td>20</td>
-                <td>B</td>
-            </tr>
-            <tr>
-                <td>D</td>
-                <td>Develop Backend</td>
-                <td>25</td>
-                <td>B</td>
-            </tr>
-            <tr>
-                <td>E</td>
-                <td>Integrate CRM</td>
-                <td>10</td>
-                <td>C, D</td>
-            </tr>
-            <tr>
-                <td>F</td>
-                <td>Testing</td>
-                <td>15</td>
-                <td>E</td>
-            </tr>
-            <tr>
-                <td>G</td>
-                <td>Deployment</td>
-                <td>5</td>
-                <td>F</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Duration (Days)</th>
+                    <th>Dependencies</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A</td>
+                    <td>Gather Requirements</td>
+                    <td>10</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Design App</td>
+                    <td>15</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Develop Frontend</td>
+                    <td>20</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Develop Backend</td>
+                    <td>25</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>Integrate CRM</td>
+                    <td>10</td>
+                    <td>C, D</td>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td>Testing</td>
+                    <td>15</td>
+                    <td>E</td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td>Deployment</td>
+                    <td>5</td>
+                    <td>F</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <!-- Path Calculations -->
 <section class="path-calculations">
-    <h3>Path Length Calculations</h3>
+    <h3 class="section-title">Path Length Calculations</h3>
     <p>All possible paths and their durations are calculated below:</p>
-    <ul>
+    <ul class="styled-list">
         <li><strong>Path 1:</strong> A → B → C → E → F → G = 75 days</li>
         <li><strong>Path 2:</strong> A → B → D → E → F → G = 80 days</li>
     </ul>
@@ -81,13 +83,13 @@
 
 <!-- Critical Path -->
 <section class="critical-path">
-    <h3>Critical Path</h3>
+    <h3 class="section-title">Critical Path</h3>
     <p>The critical path is <strong>Path 2</strong>: A → B → D → E → F → G, with a total duration of <strong>80 days</strong>. This path determines the shortest time to complete the project.</p>
 </section>
 
 <!-- Summary -->
 <section class="critical-path-summary">
-    <h3>Shortest Time to Complete Project</h3>
+    <h3 class="section-title">Shortest Time to Complete Project</h3>
     <p>The shortest possible duration to complete the "Mobile App Development for Customer Service" project is <strong>80 days</strong>, assuming all tasks on the critical path are completed on time.</p>
 </section>
 {% endblock %}
