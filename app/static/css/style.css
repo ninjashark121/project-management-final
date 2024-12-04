@@ -372,3 +372,27 @@ body {
 .back-button:hover {
     background-color: #45a049; /* Darker green on hover */
 }
+
+/* Ensure the page content doesn't get cut off */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add padding and spacing for the project charter page */
+.project-info, .objectives, .success-criteria, .assumptions-constraints, .roles-responsibilities, .communication-standards, .stakeholder-signoff {
+    margin-bottom: 20px;
+}
+
+/* Ensure enough padding at the bottom of the page */
+.stakeholder-signoff {
+    margin-bottom: 100px; /* Increase as necessary */
+}
+
+/* Add a minimum height for the page */
+body {
+    min-height: 100vh; /* Ensure the page height spans the viewport */
+    padding-bottom: 50px; /* Ensure footer or content at the bottom is visible */
+    position: relative;
+}

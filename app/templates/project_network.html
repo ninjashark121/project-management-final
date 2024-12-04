@@ -2,6 +2,84 @@
 
 {% block content %}
 <h2>Project Network Diagram</h2>
-<p>The Project Network Diagram shows the sequence of activities, dependencies, and critical paths.</p>
-<!-- Add a network diagram or placeholder for a visual representation -->
+
+<!-- Introduction -->
+<section class="network-diagram-intro">
+    <h3>Introduction</h3>
+    <p>The Project Network Diagram (Activity-on-Arrow) visually represents the sequence of activities, their dependencies, and the flow of the project. It specifies the length of each activity to aid in timeline planning and critical path analysis.</p>
+</section>
+
+<!-- AOA Network Diagram -->
+<section class="network-diagram">
+    <h3>AOA Network Diagram</h3>
+    <p>The diagram below shows the activities and their dependencies for the "Mobile App Development for Customer Service" project:</p>
+    <div class="diagram-container">
+        <img src="{{ url_for('static', filename='network_diagram.png') }}" alt="Project Network Diagram" style="max-width: 100%; height: auto;">
+    </div>
+</section>
+
+<!-- Activity Table -->
+<section class="activity-table">
+    <h3>Activity Details</h3>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Description</th>
+                <th>Predecessors</th>
+                <th>Duration (Days)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A</td>
+                <td>Gather Requirements</td>
+                <td>None</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>Design App</td>
+                <td>A</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>Develop Frontend</td>
+                <td>B</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>Develop Backend</td>
+                <td>B</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>Integrate CRM</td>
+                <td>C, D</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>Testing</td>
+                <td>E</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>Deployment</td>
+                <td>F</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Summary -->
+<section class="network-diagram-summary">
+    <h3>Summary</h3>
+    <p>The AOA Network Diagram ensures all activities and dependencies are accounted for, helping to identify the critical path and efficiently manage project timelines. This tool is integral for scheduling and resource allocation.</p>
+</section>
 {% endblock %}

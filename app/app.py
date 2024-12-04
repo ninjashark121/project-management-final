@@ -92,32 +92,44 @@ import pandas as pd
 import plotly.express as px
 from flask import Markup
 
-# Route: Gantt Chart
 @app.route('/gantt-chart')
 def gantt_chart():
     # Task Data for Gantt Chart
     data = [
+        # Initiation Phase
         {"Task": "Initiation", "Start": "2025-01-01", "Finish": "2025-01-14", "Resource": "Initiation"},
-        {"Task": "Assemble Project Team", "Start": "2025-01-01", "Finish": "2025-01-05", "Resource": "Initiation"},
-        {"Task": "Define Project Goals", "Start": "2025-01-06", "Finish": "2025-01-08", "Resource": "Initiation"},
-        {"Task": "Approve Budget", "Start": "2025-01-09", "Finish": "2025-01-10", "Resource": "Initiation"},
-        {"Task": "Assess Feasibility", "Start": "2025-01-11", "Finish": "2025-01-14", "Resource": "Initiation"},
+        {"Task": "Define Project Goals and Scope", "Start": "2025-01-01", "Finish": "2025-01-04", "Resource": "Initiation"},
+        {"Task": "Assemble Project Team", "Start": "2025-01-05", "Finish": "2025-01-07", "Resource": "Initiation"},
+        {"Task": "Approve Budget and Timeline", "Start": "2025-01-08", "Finish": "2025-01-10", "Resource": "Initiation"},
+        {"Task": "Assess Feasibility and Risks", "Start": "2025-01-11", "Finish": "2025-01-14", "Resource": "Initiation"},
+
+        # Planning Phase
         {"Task": "Planning", "Start": "2025-01-15", "Finish": "2025-01-28", "Resource": "Planning"},
-        {"Task": "Stakeholder Meetings", "Start": "2025-01-15", "Finish": "2025-01-17", "Resource": "Planning"},
-        {"Task": "Task Plans", "Start": "2025-01-18", "Finish": "2025-01-22", "Resource": "Planning"},
-        {"Task": "Communication Protocols", "Start": "2025-01-23", "Finish": "2025-01-24", "Resource": "Planning"},
-        {"Task": "Finalize Designs", "Start": "2025-01-25", "Finish": "2025-01-28", "Resource": "Planning"},
+        {"Task": "Gather Requirements", "Start": "2025-01-15", "Finish": "2025-01-18", "Resource": "Planning"},
+        {"Task": "Create Detailed Project Plan", "Start": "2025-01-19", "Finish": "2025-01-22", "Resource": "Planning"},
+        {"Task": "Design Mobile App", "Start": "2025-01-23", "Finish": "2025-01-25", "Resource": "Planning"},
+        {"Task": "Plan Testing and Deployment", "Start": "2025-01-26", "Finish": "2025-01-28", "Resource": "Planning"},
+
+        # Execution Phase
         {"Task": "Execution", "Start": "2025-02-01", "Finish": "2025-02-20", "Resource": "Execution"},
-        {"Task": "Clear Site", "Start": "2025-02-01", "Finish": "2025-02-07", "Resource": "Execution"},
-        {"Task": "Install Equipment", "Start": "2025-02-08", "Finish": "2025-02-12", "Resource": "Execution"},
-        {"Task": "Construct Trails", "Start": "2025-02-08", "Finish": "2025-02-17", "Resource": "Execution"},
-        {"Task": "Set Up Picnic Areas", "Start": "2025-02-18", "Finish": "2025-02-20", "Resource": "Execution"},
-        {"Task": "Control", "Start": "2025-02-01", "Finish": "2025-02-19", "Resource": "Control"},
-        {"Task": "Monitor Progress", "Start": "2025-02-01", "Finish": "2025-02-15", "Resource": "Control"},
-        {"Task": "Scope Changes", "Start": "2025-02-15", "Finish": "2025-02-19", "Resource": "Control"},
+        {"Task": "Develop Mobile App", "Start": "2025-02-01", "Finish": "2025-02-10", "Resource": "Execution"},
+        {"Task": "Test Application", "Start": "2025-02-11", "Finish": "2025-02-15", "Resource": "Execution"},
+        {"Task": "Integrate Customer Support Features", "Start": "2025-02-16", "Finish": "2025-02-18", "Resource": "Execution"},
+        {"Task": "Prepare for Deployment", "Start": "2025-02-19", "Finish": "2025-02-20", "Resource": "Execution"},
+
+        # Control Phase
+        {"Task": "Control", "Start": "2025-02-01", "Finish": "2025-02-25", "Resource": "Control"},
+        {"Task": "Monitor Development Progress", "Start": "2025-02-01", "Finish": "2025-02-15", "Resource": "Control"},
+        {"Task": "Manage Feature Changes", "Start": "2025-02-16", "Finish": "2025-02-20", "Resource": "Control"},
+        {"Task": "Mitigate Risks", "Start": "2025-02-15", "Finish": "2025-02-22", "Resource": "Control"},
+        {"Task": "Ensure Quality Standards", "Start": "2025-02-16", "Finish": "2025-02-25", "Resource": "Control"},
+
+        # Closure Phase
         {"Task": "Closure", "Start": "2025-02-25", "Finish": "2025-03-01", "Resource": "Closure"},
-        {"Task": "Final Inspections", "Start": "2025-02-25", "Finish": "2025-02-27", "Resource": "Closure"},
-        {"Task": "Deliver Renovated Park", "Start": "2025-02-28", "Finish": "2025-03-01", "Resource": "Closure"}
+        {"Task": "Deploy Application", "Start": "2025-02-25", "Finish": "2025-02-26", "Resource": "Closure"},
+        {"Task": "Transition to Support Team", "Start": "2025-02-27", "Finish": "2025-02-28", "Resource": "Closure"},
+        {"Task": "Gather Feedback and Lessons Learned", "Start": "2025-02-28", "Finish": "2025-02-28", "Resource": "Closure"},
+        {"Task": "Conduct Project Closeout Meeting", "Start": "2025-03-01", "Finish": "2025-03-01", "Resource": "Closure"}
     ]
 
     # Create DataFrame
@@ -130,7 +142,7 @@ def gantt_chart():
         x_end="Finish",
         y="Task",
         color="Resource",
-        title="Gantt Chart for Community Park Renovation",
+        title="Gantt Chart for Mobile App Development for Customer Service",
         labels={"Task": "Tasks", "Resource": "Phases"}
     )
 
