@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Risk Management Plan</h2>
+<h2 class="page-title">Risk Management Plan</h2>
 
 <!-- Methodology for Risk Management -->
 <section class="risk-methodology">
-    <h3>Methodology for Risk Management</h3>
+    <h3 class="section-title">Methodology for Risk Management</h3>
     <p>The risk management process for the "Mobile App Development for Customer Service" project includes the following steps:</p>
-    <ol>
+    <ol class="styled-list">
         <li><strong>Risk Identification:</strong> Identify potential risks during each project phase through brainstorming and expert consultation.</li>
         <li><strong>Risk Assessment:</strong> Analyze risks based on their probability and impact, and prioritize them accordingly.</li>
         <li><strong>Risk Mitigation Planning:</strong> Develop strategies to avoid, reduce, or accept risks, depending on stakeholder tolerance.</li>
@@ -17,8 +17,8 @@
 
 <!-- Roles and Responsibilities -->
 <section class="risk-roles">
-    <h3>Roles and Responsibilities for Managing Risks</h3>
-    <ul>
+    <h3 class="section-title">Roles and Responsibilities for Managing Risks</h3>
+    <ul class="styled-list">
         <li><strong>Project Manager:</strong> Oversee the risk management process, maintain the risk register, and coordinate mitigation efforts.</li>
         <li><strong>Development Team:</strong> Identify technical risks during design and implementation phases and provide solutions.</li>
         <li><strong>Quality Assurance Team:</strong> Identify risks related to functionality, performance, and security during testing.</li>
@@ -28,9 +28,9 @@
 
 <!-- Risk Categories -->
 <section class="risk-categories">
-    <h3>Risk Categories</h3>
+    <h3 class="section-title">Risk Categories</h3>
     <p>The following are the primary categories of risks for this project:</p>
-    <ul>
+    <ul class="styled-list">
         <li><strong>Technical Risks:</strong> Issues with app performance, integration failures, or unforeseen technical challenges.</li>
         <li><strong>Schedule Risks:</strong> Delays in completing milestones due to resource constraints or unexpected changes.</li>
         <li><strong>Budget Risks:</strong> Overruns caused by additional features, extended testing, or resource needs.</li>
@@ -41,62 +41,64 @@
 
 <!-- Risk Analysis Table -->
 <section class="risk-analysis">
-    <h3>Risk Analysis</h3>
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>Risk</th>
-                <th>Probability</th>
-                <th>Impact</th>
-                <th>Stakeholder Tolerance</th>
-                <th>Mitigation Strategy</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Integration failures with CRM</td>
-                <td>Medium</td>
-                <td>High</td>
-                <td>Low</td>
-                <td>Conduct early testing and allocate extra resources for troubleshooting.</td>
-            </tr>
-            <tr>
-                <td>Delays in app design approval</td>
-                <td>High</td>
-                <td>Medium</td>
-                <td>Medium</td>
-                <td>Set up weekly stakeholder reviews to expedite feedback.</td>
-            </tr>
-            <tr>
-                <td>Budget overrun due to scope changes</td>
-                <td>Low</td>
-                <td>High</td>
-                <td>Low</td>
-                <td>Strictly follow change control processes and maintain contingency funds.</td>
-            </tr>
-            <tr>
-                <td>Security vulnerabilities in the app</td>
-                <td>Medium</td>
-                <td>High</td>
-                <td>Low</td>
-                <td>Perform thorough security testing and adhere to OWASP standards.</td>
-            </tr>
-            <tr>
-                <td>Miscommunication among team members</td>
-                <td>Medium</td>
-                <td>Medium</td>
-                <td>High</td>
-                <td>Use collaboration tools like Slack and conduct regular team sync-ups.</td>
-            </tr>
-        </tbody>
-    </table>
+    <h3 class="section-title">Risk Analysis</h3>
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Risk</th>
+                    <th>Probability</th>
+                    <th>Impact</th>
+                    <th>Stakeholder Tolerance</th>
+                    <th>Mitigation Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Integration failures with CRM</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Low</td>
+                    <td>Conduct early testing and allocate extra resources for troubleshooting.</td>
+                </tr>
+                <tr>
+                    <td>Delays in app design approval</td>
+                    <td>High</td>
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td>Set up weekly stakeholder reviews to expedite feedback.</td>
+                </tr>
+                <tr>
+                    <td>Budget overrun due to scope changes</td>
+                    <td>Low</td>
+                    <td>High</td>
+                    <td>Low</td>
+                    <td>Strictly follow change control processes and maintain contingency funds.</td>
+                </tr>
+                <tr>
+                    <td>Security vulnerabilities in the app</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Low</td>
+                    <td>Perform thorough security testing and adhere to OWASP standards.</td>
+                </tr>
+                <tr>
+                    <td>Miscommunication among team members</td>
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Use collaboration tools like Slack and conduct regular team sync-ups.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <!-- Risk Tracking Methods -->
 <section class="risk-tracking">
-    <h3>Risk Tracking Methods</h3>
+    <h3 class="section-title">Risk Tracking Methods</h3>
     <p>Risks will be tracked using the following methods:</p>
-    <ul>
+    <ul class="styled-list">
         <li><strong>Risk Register:</strong> Maintains a list of all identified risks, including their status and mitigation plans.</li>
         <li><strong>Project Management Tools:</strong> Tools like JIRA or Trello will be used to track risk-related tasks and their progress.</li>
         <li><strong>Regular Updates:</strong> Risk status will be reviewed during weekly project meetings and updated accordingly.</li>
@@ -105,7 +107,7 @@
 
 <!-- Summary -->
 <section class="risk-summary">
-    <h3>Summary</h3>
+    <h3 class="section-title">Summary</h3>
     <p>By implementing a robust risk management plan, the project team can proactively identify, assess, and mitigate risks, ensuring the successful completion of the "Mobile App Development for Customer Service" project.</p>
 </section>
 {% endblock %}

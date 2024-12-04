@@ -1,83 +1,87 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Status and Progress Reports Templates</h2>
+<h2 class="page-title">Status and Progress Reports Templates</h2>
 
 <!-- Progress Report Template -->
 <section class="progress-report">
-    <h3>Progress Report Template</h3>
+    <h3 class="section-title">Progress Report Template</h3>
     <p>The progress report is used to summarize recent accomplishments, outline upcoming plans, and address any issues encountered.</p>
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>Section</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Project Name</strong></td>
-                <td>Enter the project name (e.g., Mobile App Development for Customer Service).</td>
-            </tr>
-            <tr>
-                <td><strong>Date</strong></td>
-                <td>Enter the date of the report submission.</td>
-            </tr>
-            <tr>
-                <td><strong>Accomplishments</strong></td>
-                <td>Summarize completed tasks and milestones achieved since the last report.</td>
-            </tr>
-            <tr>
-                <td><strong>Plans</strong></td>
-                <td>Outline the tasks planned for the next reporting period.</td>
-            </tr>
-            <tr>
-                <td><strong>Issues</strong></td>
-                <td>List any problems encountered, including their impact and potential solutions.</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Project Name</strong></td>
+                    <td>Enter the project name (e.g., Mobile App Development for Customer Service).</td>
+                </tr>
+                <tr>
+                    <td><strong>Date</strong></td>
+                    <td>Enter the date of the report submission.</td>
+                </tr>
+                <tr>
+                    <td><strong>Accomplishments</strong></td>
+                    <td>Summarize completed tasks and milestones achieved since the last report.</td>
+                </tr>
+                <tr>
+                    <td><strong>Plans</strong></td>
+                    <td>Outline the tasks planned for the next reporting period.</td>
+                </tr>
+                <tr>
+                    <td><strong>Issues</strong></td>
+                    <td>List any problems encountered, including their impact and potential solutions.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <!-- Status Report Template -->
 <section class="status-report">
-    <h3>Status Report Template</h3>
+    <h3 class="section-title">Status Report Template</h3>
     <p>The status report provides an overview of the project’s current state, including scope, time, and cost.</p>
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>Section</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Project Name</strong></td>
-                <td>Enter the project name (e.g., Mobile App Development for Customer Service).</td>
-            </tr>
-            <tr>
-                <td><strong>Date</strong></td>
-                <td>Enter the date of the report submission.</td>
-            </tr>
-            <tr>
-                <td><strong>Scope</strong></td>
-                <td>Summarize the project’s scope and any changes made since the last report.</td>
-            </tr>
-            <tr>
-                <td><strong>Time</strong></td>
-                <td>Provide an update on the project’s timeline, including progress and any delays.</td>
-            </tr>
-            <tr>
-                <td><strong>Cost</strong></td>
-                <td>Detail the budget status, including spending to date and remaining funds.</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Project Name</strong></td>
+                    <td>Enter the project name (e.g., Mobile App Development for Customer Service).</td>
+                </tr>
+                <tr>
+                    <td><strong>Date</strong></td>
+                    <td>Enter the date of the report submission.</td>
+                </tr>
+                <tr>
+                    <td><strong>Scope</strong></td>
+                    <td>Summarize the project’s scope and any changes made since the last report.</td>
+                </tr>
+                <tr>
+                    <td><strong>Time</strong></td>
+                    <td>Provide an update on the project’s timeline, including progress and any delays.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost</strong></td>
+                    <td>Detail the budget status, including spending to date and remaining funds.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <!-- Summary -->
 <section class="report-summary">
-    <h3>Report Summary</h3>
+    <h3 class="section-title">Report Summary</h3>
     <p>The progress and status report templates ensure that all key stakeholders are informed about the project’s development. These reports serve as essential tools for tracking accomplishments, planning future work, and addressing potential challenges.</p>
 </section>
 {% endblock %}
