@@ -75,6 +75,11 @@ def team():
 def project_charter():
     return render_template('project_charter.html')
 
+@app.route('/project-sow')
+def project_sow():
+    return render_template('project_sow.html')
+
+
 
 # Route: Work Breakdown Structure (WBS)
 @app.route('/wbs')
@@ -96,40 +101,43 @@ from flask import Markup
 def gantt_chart():
     # Task Data for Gantt Chart
     data = [
-        # Initiation Phase
-        {"Task": "Initiation", "Start": "2025-01-01", "Finish": "2025-01-14", "Resource": "Initiation"},
-        {"Task": "Define Project Goals and Scope", "Start": "2025-01-01", "Finish": "2025-01-04", "Resource": "Initiation"},
-        {"Task": "Assemble Project Team", "Start": "2025-01-05", "Finish": "2025-01-07", "Resource": "Initiation"},
-        {"Task": "Approve Budget and Timeline", "Start": "2025-01-08", "Finish": "2025-01-10", "Resource": "Initiation"},
-        {"Task": "Assess Feasibility and Risks", "Start": "2025-01-11", "Finish": "2025-01-14", "Resource": "Initiation"},
+        # Initiation Phase (10 days)
+        {"Task": "Initiation", "Start": "2024-12-03", "Finish": "2024-12-12", "Resource": "Initiation"},
+        {"Task": "Define Project Goals and Scope", "Start": "2024-12-03", "Finish": "2024-12-05", "Resource": "Initiation"},
+        {"Task": "Identify key objectives", "Start": "2024-12-03", "Finish": "2024-12-04", "Resource": "Initiation"},
+        {"Task": "Define app features and functionality", "Start": "2024-12-04", "Finish": "2024-12-05", "Resource": "Initiation"},
+        {"Task": "Set project boundaries", "Start": "2024-12-05", "Finish": "2024-12-06", "Resource": "Initiation"},
+        {"Task": "Assemble Project Team", "Start": "2024-12-06", "Finish": "2024-12-07", "Resource": "Initiation"},
+        {"Task": "Approve Budget and Timeline", "Start": "2024-12-08", "Finish": "2024-12-09", "Resource": "Initiation"},
+        {"Task": "Assess Feasibility and Risks", "Start": "2024-12-10", "Finish": "2024-12-12", "Resource": "Initiation"},
 
-        # Planning Phase
-        {"Task": "Planning", "Start": "2025-01-15", "Finish": "2025-01-28", "Resource": "Planning"},
-        {"Task": "Gather Requirements", "Start": "2025-01-15", "Finish": "2025-01-18", "Resource": "Planning"},
-        {"Task": "Create Detailed Project Plan", "Start": "2025-01-19", "Finish": "2025-01-22", "Resource": "Planning"},
-        {"Task": "Design Mobile App", "Start": "2025-01-23", "Finish": "2025-01-25", "Resource": "Planning"},
-        {"Task": "Plan Testing and Deployment", "Start": "2025-01-26", "Finish": "2025-01-28", "Resource": "Planning"},
+        # Planning Phase (15 days)
+        {"Task": "Planning", "Start": "2024-12-13", "Finish": "2024-12-27", "Resource": "Planning"},
+        {"Task": "Gather Requirements", "Start": "2024-12-13", "Finish": "2024-12-16", "Resource": "Planning"},
+        {"Task": "Create Detailed Project Plan", "Start": "2024-12-17", "Finish": "2024-12-19", "Resource": "Planning"},
+        {"Task": "Design Mobile App", "Start": "2024-12-20", "Finish": "2024-12-23", "Resource": "Planning"},
+        {"Task": "Plan Testing and Deployment", "Start": "2024-12-24", "Finish": "2024-12-27", "Resource": "Planning"},
 
-        # Execution Phase
-        {"Task": "Execution", "Start": "2025-02-01", "Finish": "2025-02-20", "Resource": "Execution"},
-        {"Task": "Develop Mobile App", "Start": "2025-02-01", "Finish": "2025-02-10", "Resource": "Execution"},
-        {"Task": "Test Application", "Start": "2025-02-11", "Finish": "2025-02-15", "Resource": "Execution"},
-        {"Task": "Integrate Customer Support Features", "Start": "2025-02-16", "Finish": "2025-02-18", "Resource": "Execution"},
-        {"Task": "Prepare for Deployment", "Start": "2025-02-19", "Finish": "2025-02-20", "Resource": "Execution"},
+        # Execution Phase (30 days)
+        {"Task": "Execution", "Start": "2024-12-28", "Finish": "2025-01-26", "Resource": "Execution"},
+        {"Task": "Develop Mobile App", "Start": "2024-12-28", "Finish": "2025-01-14", "Resource": "Execution"},
+        {"Task": "Test Application", "Start": "2025-01-15", "Finish": "2025-01-20", "Resource": "Execution"},
+        {"Task": "Integrate Customer Support Features", "Start": "2025-01-21", "Finish": "2025-01-24", "Resource": "Execution"},
+        {"Task": "Prepare for Deployment", "Start": "2025-01-25", "Finish": "2025-01-26", "Resource": "Execution"},
 
-        # Control Phase
-        {"Task": "Control", "Start": "2025-02-01", "Finish": "2025-02-25", "Resource": "Control"},
-        {"Task": "Monitor Development Progress", "Start": "2025-02-01", "Finish": "2025-02-15", "Resource": "Control"},
-        {"Task": "Manage Feature Changes", "Start": "2025-02-16", "Finish": "2025-02-20", "Resource": "Control"},
-        {"Task": "Mitigate Risks", "Start": "2025-02-15", "Finish": "2025-02-22", "Resource": "Control"},
-        {"Task": "Ensure Quality Standards", "Start": "2025-02-16", "Finish": "2025-02-25", "Resource": "Control"},
+        # Control Phase (15 days)
+        {"Task": "Control", "Start": "2025-01-27", "Finish": "2025-02-10", "Resource": "Control"},
+        {"Task": "Monitor Development Progress", "Start": "2025-01-27", "Finish": "2025-02-02", "Resource": "Control"},
+        {"Task": "Manage Feature Changes", "Start": "2025-02-03", "Finish": "2025-02-05", "Resource": "Control"},
+        {"Task": "Mitigate Risks", "Start": "2025-02-06", "Finish": "2025-02-08", "Resource": "Control"},
+        {"Task": "Ensure Quality Standards", "Start": "2025-02-09", "Finish": "2025-02-10", "Resource": "Control"},
 
-        # Closure Phase
-        {"Task": "Closure", "Start": "2025-02-25", "Finish": "2025-03-01", "Resource": "Closure"},
-        {"Task": "Deploy Application", "Start": "2025-02-25", "Finish": "2025-02-26", "Resource": "Closure"},
-        {"Task": "Transition to Support Team", "Start": "2025-02-27", "Finish": "2025-02-28", "Resource": "Closure"},
-        {"Task": "Gather Feedback and Lessons Learned", "Start": "2025-02-28", "Finish": "2025-02-28", "Resource": "Closure"},
-        {"Task": "Conduct Project Closeout Meeting", "Start": "2025-03-01", "Finish": "2025-03-01", "Resource": "Closure"}
+        # Closure Phase (10 days)
+        {"Task": "Closure", "Start": "2025-02-11", "Finish": "2025-02-20", "Resource": "Closure"},
+        {"Task": "Deploy Application", "Start": "2025-02-11", "Finish": "2025-02-12", "Resource": "Closure"},
+        {"Task": "Transition to Support Team", "Start": "2025-02-13", "Finish": "2025-02-14", "Resource": "Closure"},
+        {"Task": "Gather Feedback and Lessons Learned", "Start": "2025-02-15", "Finish": "2025-02-16", "Resource": "Closure"},
+        {"Task": "Conduct Project Closeout Meeting", "Start": "2025-02-17", "Finish": "2025-02-20", "Resource": "Closure"}
     ]
 
     # Create DataFrame
@@ -152,13 +160,15 @@ def gantt_chart():
         xaxis=dict(showgrid=True),
         yaxis=dict(autorange="reversed"),
         bargap=0.2,
-        height=600
+        height=1000
     )
 
     # Convert plot to HTML
     gantt_chart_html = fig.to_html(full_html=False)
 
     return render_template('gantt_chart.html', gantt_chart=Markup(gantt_chart_html))
+
+
 
 
 
